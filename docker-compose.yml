@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: beer_api_development
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"  # Mapeando a porta 3307 do host para a porta 3306 do contêiner
+
+
+#Comando que eu utilizei para iniciar os serviços do docker: sudo systemctl start docker.socket && sudo systemctl start docker.service

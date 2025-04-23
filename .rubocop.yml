@@ -1,0 +1,22 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-rspec_rails
+
+AllCops:
+  TargetRubyVersion: 3.3.6
+  TargetRailsVersion: 8.0.1
+  NewCops: enable
+
+  Exclude:
+  - "bin/**/*"
+  - "db/schema.rb"
+  - "vendor/**/*"
+  - "node_modules/**/*"
+  - "public/**/*"
+  - ".git/**/*"
+
+
+Style/Documentation:
+  Enabled: false

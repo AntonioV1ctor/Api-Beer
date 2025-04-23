@@ -1,0 +1,973 @@
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (2.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.8ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-18 21:25:54.297814', '2024-12-18 21:25:54.297814')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 18.3ms)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-18 21:25:54.305166', '2024-12-18 21:25:54.305166')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-18 21:25:54.319070', '2024-12-18 21:25:54.319070')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/3" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"3", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 3 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (1.1ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-18 21:25:54.323304' WHERE `beers`.`id` = 3[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-18 21:25:54.686059', '2024-12-18 21:25:54.686059')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/4" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 4 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 4[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-18 17:25:54 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (9.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `beer_api_test`[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE DATABASE `beer_api_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `beers` CASCADE[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE `beers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` text, `image_url` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS `beers_food_pairings` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `beers_food_pairings` (`beer_id` bigint NOT NULL, `food_pairing_id` bigint NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `food_pairings` CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE `food_pairings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `pubs` CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `pubs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `location` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20241213235212)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20241213235210),
+(20241213235209),
+(20241213235207);[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2024-12-19 19:17:08.024760', '2024-12-19 19:17:08.024763')[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '17f6518fd45a65fbd00ab67a8080bde0b744ded8', '2024-12-19 19:17:08.031379', '2024-12-19 19:17:08.031380')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (1.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (1.1ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:17:08.128563', '2024-12-19 19:17:08.128563')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.2ms | ActiveRecord: 5.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:17:08.135704', '2024-12-19 19:17:08.135704')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:17:08.149274', '2024-12-19 19:17:08.149274')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/3" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"3", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 3 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.7ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:17:08.153523' WHERE `beers`.`id` = 3[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (1.1ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:17:08.579882', '2024-12-19 19:17:08.579882')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/4" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 4 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 4[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:17:08 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:17:31.604065', '2024-12-19 19:17:31.604065')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:17:31.613595', '2024-12-19 19:17:31.613595')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:17:31.628013', '2024-12-19 19:17:31.628013')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/4" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"4", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 4 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.8ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:17:31.652687' WHERE `beers`.`id` = 4[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:17:31 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:17:32.079628', '2024-12-19 19:17:32.079628')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/5" for 127.0.0.1 at 2024-12-19 15:17:32 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 5 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.5ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 5[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:17:32 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (1.0ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.9ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:18:50.401461', '2024-12-19 19:18:50.401461')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:18:50.410164', '2024-12-19 19:18:50.410164')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:18:50.424624', '2024-12-19 19:18:50.424624')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/7" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"7", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 7 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.8ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:18:50.450799' WHERE `beers`.`id` = 7[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 21.5ms)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:18:50.878556', '2024-12-19 19:18:50.878556')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/8" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 8 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.9ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 8[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:18:50 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.9ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:25:25.853232', '2024-12-19 19:25:25.853232')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.2ms | ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:25:25.864492', '2024-12-19 19:25:25.864492')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (1.2ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:25:25.902215', '2024-12-19 19:25:25.902215')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/11" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"11", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 11 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.7ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:25:25.907511' WHERE `beers`.`id` = 11[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:25:25 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.4ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:25:26.355656', '2024-12-19 19:25:26.355656')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/12" for 127.0.0.1 at 2024-12-19 15:25:26 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 12 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (1.5ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 12[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:25:26 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:32:52.823195', '2024-12-19 19:32:52.823195')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.9ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:32:52.850369', '2024-12-19 19:32:52.850369')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:32:52.866241', '2024-12-19 19:32:52.866241')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/15" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"15", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 15 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.9ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:32:52.870690' WHERE `beers`.`id` = 15[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:32:52 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:32:53.239739', '2024-12-19 19:32:53.239739')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/16" for 127.0.0.1 at 2024-12-19 15:32:53 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 16 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 16[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.5ms)
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:32:53 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Create (0.8ms)[0m  [1m[32mINSERT INTO `food_pairings` (`name`, `created_at`, `updated_at`) VALUES ('Cheese', '2024-12-19 19:45:40.954281', '2024-12-19 19:45:40.954281')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:45:40 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:45:41.011569', '2024-12-19 19:45:41.011569')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:45:41.018544', '2024-12-19 19:45:41.018544')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:45:41.032459', '2024-12-19 19:45:41.032459')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/19" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"19", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 19 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.7ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:45:41.036637' WHERE `beers`.`id` = 19[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:45:41.442628', '2024-12-19 19:45:41.442628')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/20" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mBeer Load (0.8ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 20 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.5ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 20[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:45:41 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` IS NULL LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mFoodPairing Create (0.4ms)[0m  [1m[32mINSERT INTO `food_pairings` (`name`, `created_at`, `updated_at`) VALUES ('Cheese', '2024-12-19 19:59:08.163058', '2024-12-19 19:59:08.163058')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (26.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:59:08.194441', '2024-12-19 19:59:08.194441')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 19:59:08.244504', '2024-12-19 19:59:08.244504')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (20.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (17.2ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 19:59:08.270485', '2024-12-19 19:59:08.270485')[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 19ms (Views: 0.2ms | ActiveRecord: 17.8ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (24.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:59:08.324844', '2024-12-19 19:59:08.324844')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/24" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"24", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 24 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.9ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 19:59:08.328755' WHERE `beers`.`id` = 24[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 19:59:08.748045', '2024-12-19 19:59:08.748045')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/25" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 25 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.6ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 25[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 15:59:08 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` IS NULL LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mFoodPairing Create (0.4ms)[0m  [1m[32mINSERT INTO `food_pairings` (`name`, `created_at`, `updated_at`) VALUES ('Cheese', '2024-12-19 20:06:53.434304', '2024-12-19 20:06:53.434304')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 20:06:53.443028', '2024-12-19 20:06:53.443028')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#index as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers`[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png", "beer"=>{"name"=>"IPA", "description"=>"A hoppy beer", "image_url"=>"http://example.com/ipa.png"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', 'http://example.com/ipa.png', '2024-12-19 20:06:53.491485', '2024-12-19 20:06:53.491485')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/beers" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"name"=>"IPA", "beer"=>{"name"=>"IPA"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', NULL, NULL, '2024-12-19 20:06:53.497617', '2024-12-19 20:06:53.497617')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/beers/random" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#random as JSON
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` ORDER BY RAND() LIMIT 1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 20:06:53.510275', '2024-12-19 20:06:53.510275')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/beers/29" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"29", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 29 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Update (0.7ms)[0m  [1m[33mUPDATE `beers` SET `beers`.`name` = 'Updated IPA', `beers`.`description` = 'An updated hoppy beer', `beers`.`updated_at` = '2024-12-19 20:06:53.513960' WHERE `beers`.`id` = 29[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started PUT "/beers/invalid" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#update as HTML
+  Parameters: {"name"=>"Updated IPA", "description"=>"An updated hoppy beer", "id"=>"invalid", "beer"=>{"name"=>"Updated IPA", "description"=>"An updated hoppy beer"}}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 20:06:53.934035', '2024-12-19 20:06:53.934035')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/beers/30" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = 30 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM `beers` WHERE `beers`.`id` = 30[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/beers/invalid" for 127.0.0.1 at 2024-12-19 16:06:53 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"invalid"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT `beers`.* FROM `beers` WHERE `beers`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=invalid):
+  
+app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFoodPairing Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` IS NULL LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mFoodPairing Create (0.5ms)[0m  [1m[32mINSERT INTO `food_pairings` (`name`, `created_at`, `updated_at`) VALUES ('Cheese', '2024-12-19 21:28:42.337425', '2024-12-19 21:28:42.337425')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mFoodPairing Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `food_pairings` WHERE `food_pairings`.`name` = 'Cheese' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBeer Create (1.0ms)[0m  [1m[32mINSERT INTO `beers` (`name`, `description`, `image_url`, `created_at`, `updated_at`) VALUES ('IPA', 'A hoppy beer', NULL, '2024-12-19 21:28:42.348861', '2024-12-19 21:28:42.348861')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
