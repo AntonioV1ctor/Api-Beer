@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'ubuntu:latest'
-      args 'sudo apt update'
-    }
-
-  }
+  agent none
   stages {
     stage('Rvm Install') {
       steps {
@@ -40,7 +34,7 @@ rvm use 3.3.6'''
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'Tudo funcionando perfeitamente!'
       }
