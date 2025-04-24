@@ -1,4 +1,4 @@
-# 🚀 BEER-API
+# 🚀 BEER-API Test Ci
 
 API desenvolvida em **Ruby on Rails** para integração e gerenciamento de sistemas.
 Esse é um mesmo repositório do Beer-Api porém com CI usando Jenkins.
