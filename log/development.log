@@ -3080,3 +3080,37 @@ Started GET "/api-docs/swagger-ui.css" for 127.0.0.1 at 2025-01-02 12:28:50 -040
 Started GET "/api-docs/swagger-ui-bundle.js" for 127.0.0.1 at 2025-01-02 12:28:50 -0400
 Started GET "/api-docs/swagger-ui-standalone-preset.js" for 127.0.0.1 at 2025-01-02 12:28:50 -0400
 Started GET "/api-docs/v1/swagger.yaml" for 127.0.0.1 at 2025-01-02 12:28:50 -0400
+  [1m[35m (101.5ms)[0m  [1m[35mCREATE DATABASE `beer_api_development` DEFAULT CHARACTER SET `utf8` /*application='BeerApi'*/[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE DATABASE `beer_api_development` DEFAULT CHARACTER SET `utf8` /*application='BeerApi'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `beer_api_test` DEFAULT CHARACTER SET `utf8` /*application='BeerApi'*/[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE DATABASE `beer_api_development` DEFAULT CHARACTER SET `utf8` /*application='BeerApi'*/[0m
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE DATABASE `beer_api_test` DEFAULT CHARACTER SET `utf8` /*application='BeerApi'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `beers` CASCADE /*application='BeerApi'*/[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE `beers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `description` text, `image_url` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci /*application='BeerApi'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `beers_food_pairings` CASCADE /*application='BeerApi'*/[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE `beers_food_pairings` (`beer_id` bigint NOT NULL, `food_pairing_id` bigint NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci /*application='BeerApi'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `food_pairings` CASCADE /*application='BeerApi'*/[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `food_pairings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci /*application='BeerApi'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `pubs` CASCADE /*application='BeerApi'*/[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE `pubs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `location` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci /*application='BeerApi'*/[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='BeerApi'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20241213235212) /*application='BeerApi'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20241213235210),
+(20241213235209),
+(20241213235207); /*application='BeerApi'*/[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-04-24 20:51:57.558644', '2025-04-24 20:51:57.558647') /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '17f6518fd45a65fbd00ab67a8080bde0b744ded8', '2025-04-24 20:51:57.568071', '2025-04-24 20:51:57.568073') /*application='BeerApi'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1908011972976811380', 0) /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='BeerApi'*/[0m
+Migrating to AddUniqueIndexToFoodPairingsName (20250424204655)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_food_pairings_on_name` ON `food_pairings` (`name`) /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250424204655') /*application='BeerApi'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('1908011972976811380') /*application='BeerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='BeerApi'*/[0m

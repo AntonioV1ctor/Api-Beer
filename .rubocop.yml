@@ -16,7 +16,10 @@ AllCops:
   - "node_modules/**/*"
   - "public/**/*"
   - ".git/**/*"
-
+  
+Metrics/BlockLength:
+  Exclude:
+    - 'db/*_schema.rb'
 
 Style/Documentation:
   Enabled: false

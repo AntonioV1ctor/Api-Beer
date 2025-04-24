@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class BeersController < ApplicationController
-  #GET /beers/:id
+  # GET /beers
+  def index
+    @beers = Beer.all
+    render json: @beers, status: :ok
+  end
+
+  # GET /beers/:id
   def show
     @beer = Beer.find_by(id: params[:id])
     if @beer
@@ -9,12 +15,6 @@ class BeersController < ApplicationController
     else
       render json: @Beer, status: :not_found
     end
-  end
-
-  # GET /beers
-  def index
-    @beers = Beer.all
-    render json: @beers, status: :ok
   end
 
   # GET /beers/random
