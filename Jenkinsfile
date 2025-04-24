@@ -1,46 +1,42 @@
 pipeline {
-    agent {
-        docker {
-            image 'ruby:3.3.6-alpine'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
+  agent {
+    docker {
+      image 'ruby:3.3.6-alpine'
+      args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
-    
-    stages {
-        stage('PreparaÃ§Ã£o') {
-            steps {
-                checkout scm
-                sh 'apk add --no-cache docker docker-compose mysql-client build-base libxml2-dev libxslt-dev git'
-            }
-        }
-        
-        stage('ConfiguraÃ§Ã£o do Ambiente') {
-            steps {
-                sh 'docker-compose up -d db'
-                
-                sh '''
-                    for i in {1..30}; do
-                      if mysqladmin ping -h localhost -P 3307 -u root -proot --silent; then
-                        echo "MySQL estÃ¡ pronto!"
-                        break
-                      fi
-                      echo "Aguardando MySQL inicializar... ($i/30)"
-                      sleep 2
-                    done
-                '''
-            }
-        }
-        
-        stage('InstalaÃ§Ã£o de DependÃªncias') {
-            steps {
-                sh 'bundle install --jobs=4 --retry=3'
-            }
-        }
-        
-        stage('ConfiguraÃ§Ã£o do Banco de Dados') {
-            steps {
-                sh '''
-                cat > config/database.yml << EOL
+
+  }
+  stages {
+    stage('Preparação') {
+      steps {
+        checkout scm
+        sh 'apk add --no-cache docker docker-compose mysql-client build-base libxml2-dev libxslt-dev git'
+      }
+    }
+
+    stage('Configuração do Ambiente') {
+      steps {
+        sh 'docker-compose up -d db'
+        sh '''for i in {1..30}; do
+  if mysqladmin ping -h localhost -P 3307 -u root -proot --silent; then
+    echo "MySQL está pronto!"
+    break
+  fi
+  echo "Aguardando MySQL inicializar... ($i/30)"
+  sleep 2
+done'''
+      }
+    }
+
+    stage('Instalação de Dependências') {
+      steps {
+        sh 'bundle install --jobs=4 --retry=3'
+      }
+    }
+
+    stage('Configuração do Banco de Dados') {
+      steps {
+        sh '''cat > config/database.yml << EOL
 test:
   adapter: mysql2
   host: localhost
@@ -51,45 +47,38 @@ test:
   encoding: utf8mb4
 EOL
                 '''
-                
+        sh 'bundle exec rails db:create'
+        sh 'bundle exec rails db:migrate'
+      }
+    }
 
-                sh 'bundle exec rails db:create'
-                sh 'bundle exec rails db:migrate'
-            }
-        }
-        
-        stage('Testes') {
-            steps {
-                sh 'bundle exec rspec'
-            }
-            post {
-                always {
-                    junit 'spec/reports/*.xml'
-                }
-            }
-        }
-        
-        stage('AnÃ¡lise de CÃ³digo') {
-            parallel {
-                stage('Rubocop') {
-                    steps {
-                        sh 'bundle exec rubocop --format progress'
-                    }
-                }
-            }
-        }
-    }
-    
-    post {
+    stage('Testes') {
+      post {
         always {
-            sh 'docker-compose down'
-            cleanWs()
+          junit 'spec/reports/*.xml'
         }
-        success {
-            echo 'Pipeline executado com sucesso!'
-        }
-        failure {
-            echo 'Pipeline falhou. Verifique os logs para mais detalhes.'
-        }
+
+      }
+      steps {
+        sh 'bundle exec rspec'
+        sh 'bundle exec rubocop --format progress'
+      }
     }
+
+  }
+  post {
+    always {
+      sh 'docker-compose down'
+      cleanWs()
+    }
+
+    success {
+      echo 'Pipeline executado com sucesso!'
+    }
+
+    failure {
+      echo 'Pipeline falhou. Verifique os logs para mais detalhes.'
+    }
+
+  }
 }
